@@ -13,5 +13,5 @@ int main() {
   std::cout << "Hello " << str << ", my friend!" << std::endl;
 
   std::cout << std::endl << std::endl;
-  return (0);
+  return 0;
 }
