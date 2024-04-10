@@ -6,7 +6,8 @@
 #include <string>
 
 int main() {
-  std::cout << "What is your name? ";
+  // std::flush ensures output is completely sent before awaiting user input
+  std::cout << "What is your name? " << std::flush;
   std::string str;
   std::cin >> str;
   std::cout << "Hello " << str << ", my friend!" << std::endl;
