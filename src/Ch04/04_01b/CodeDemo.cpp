@@ -5,9 +5,9 @@
 #include <iostream>
 
 int main() {
-  int a = 1023;
-  bool flag = false;
-  char lttr = 'd';
+  int a = 1024;
+  bool flag = true;
+  char lttr = 'e';
   if (a > 1000) {
     std::cout << "Warning: a is over 1000" << std::endl;
   }
@@ -21,9 +21,9 @@ int main() {
   std::cout << "The letter " << lttr << " is ";
   if (lttr != 'a' && lttr != 'e' && lttr != 'i' && lttr != 'o' && lttr != 'u' &&
       lttr != 'A' && lttr != 'E' && lttr != 'I' && lttr != 'O' && lttr != 'U') {
-    std::cout << "not";
+    std::cout << "not ";
   }
-  std::cout << " a vowel" << std::endl;
+  std::cout << "a vowel" << std::endl;
 
   if (flag) {
     std::cout << "Thr flag is true!" << std::endl;
