@@ -26,7 +26,7 @@ int main() {
   std::cout << "a vowel" << std::endl;
 
   if (flag) {
-    std::cout << "Thr flag is true!" << std::endl;
+    std::cout << "The flag is true!" << std::endl;
   } else {
     std::cout << "The flag is false!" << std::endl;
   }
