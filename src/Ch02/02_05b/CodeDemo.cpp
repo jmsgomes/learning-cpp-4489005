@@ -12,7 +12,7 @@ int main() {
   auto d = 3.14;
   auto e = true;
   auto f = 'd';
-  auto g = "C++ rocks!";  // "Pointer to const char*" (K represents const)
+  auto g = "C++ rocks!";  // PKc "Pointer to const char*" (K represents const)
 
   std::cout << "The type of a is: " << typeid(a).name() << std::endl;
   std::cout << "The type of b is: " << typeid(b).name() << std::endl;
