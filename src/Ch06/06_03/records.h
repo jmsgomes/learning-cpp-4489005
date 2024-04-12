@@ -47,7 +47,7 @@ private:
     std::vector<Grade> grades;
 
     float get_num_grade(char) const;
-    
+
 public:
     void add_student(int, std::string);
     void add_course(int, std::string, unsigned char);
@@ -58,4 +58,5 @@ public:
     float get_GPA(int) const;
     std::string get_course_name(int) const;
     void report_card(int);
+    void report_card(int, std::ostream& output_stream);
 };
