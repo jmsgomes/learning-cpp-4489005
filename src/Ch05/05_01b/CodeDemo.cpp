@@ -1,61 +1,43 @@
-// Learning C++ 
+// Learning C++
 // Exercise 05_01
-// Creating Functions, by Eduardo Corpeño 
+// Creating Functions, by Eduardo Corpeño
 
 #include <iostream>
 #include <vector>
+
 #include "records.h"
 
-int main(){
-    float GPA = 0.0f;
-    int id;
+void initialize(StudentRecords&);
 
-    std::vector<Student> students = {Student(1, "George P. Burdell"),
-                                    Student(2, "Nancy Rhodes")};
+int main() {
+  StudentRecords student_records;
+  initialize(student_records);
 
-    std::vector<Course> courses = {Course(1, "Algebra", 5),
-                                Course(2, "Physics", 4),
-                                Course(3, "English", 3),
-                                Course(4, "Economics", 4)};
+  int id;
+  std::cout << "Enter a student ID: " << std::flush;
+  std::cin >> id;
 
-    std::vector<Grade> grades = {Grade(1, 1, 'B'), Grade(1, 2, 'A'), Grade(1, 3, 'C'),
-                                Grade(2, 1, 'A'), Grade(2, 2, 'A'), Grade(2, 4, 'B')};
+  std::string student_name = student_records.get_student_name(id);
+  std::cout << "The GPA for " << student_name << " is "
+            << student_records.get_GPA(id) << std::endl;
 
-    std::cout << "Enter a student ID: " << std::flush;
-    std::cin >> id;
+  std::cout << std::endl << std::endl;
+  return 0;
+}
 
-    float points = 0.0f, credits = 0.0f;
-    for (Grade& grd : grades)
-        if (grd.get_student_id() == id){
-            float num_grd;          // float for the numeric grade
-            switch (grd.get_grade()){
-                case 'A': num_grd = 4.0f;
-                    break;
-                case 'B': num_grd = 3.0f;
-                    break;
-                case 'C': num_grd = 2.0f;
-                    break;
-                case 'D': num_grd = 1.0f;
-                    break;
-                default:  num_grd = 0.0f;
-                    break;
-            };
-            
-            int j = 0;
-            while (j < courses.size() && courses[j].get_id() != grd.get_course_id())
-                j++;
-            credits += courses[j].get_credits();
-            points += num_grd * courses[j].get_credits();
-        }
-    GPA = points / credits;
+void initialize(StudentRecords& student_records) {
+  student_records.add_student(1, "George P. Burdell");
+  student_records.add_student(2, "Nancy Rhodes");
 
-    std::string student_str;
-    int i = 0;
-    while (i < students.size() && students[i].get_id() != id)
-        i++;
-    student_str = students[i].get_name();
-    std::cout << "The GPA for " << student_str << " is " << GPA << std::endl;
-    
-    std::cout << std::endl << std::endl;
-    return (0);
+  student_records.add_course(1, "Algebra", 5);
+  student_records.add_course(2, "Physics", 4);
+  student_records.add_course(3, "English", 3);
+  student_records.add_course(4, "Economics", 4);
+
+  student_records.add_grade(1, 1, 'B');
+  student_records.add_grade(1, 2, 'A');
+  student_records.add_grade(1, 3, 'C');
+  student_records.add_grade(2, 1, 'A');
+  student_records.add_grade(2, 2, 'A');
+  student_records.add_grade(2, 4, 'B');
 }
