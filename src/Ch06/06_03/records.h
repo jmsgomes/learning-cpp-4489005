@@ -59,4 +59,5 @@ public:
     std::string get_course_name(int) const;
     void report_card(int);
     void report_card(int, std::ostream& output_stream);
+    void report_file(std::ofstream &output_file);
 };

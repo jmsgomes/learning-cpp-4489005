@@ -17,18 +17,15 @@ int main() {
 
   initialize(SR);
 
-  std::cout << "Enter a student ID: " << std::flush;
-  std::cin >> id;
+  // std::cout << "Enter a student ID: " << std::flush;
+  // std::cin >> id;
 
-  SR.report_card(id);
+  // SR.report_card(id);
 
   std::ofstream output_stream;
   output_stream.open("report.txt");
-  SR.report_card(id, output_stream);
-  output_stream.close();
-  std::cout << std::endl << "Report card written to report.txt" << std::endl;
+  SR.report_file(output_stream);
 
-  std::cout << std::endl << std::endl;
   return 0;
 }
 
